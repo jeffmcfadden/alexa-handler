@@ -18,10 +18,10 @@ class AlexaRequestsController < ApplicationController
     if params["header"]["namespace"] == "Alexa.ConnectedHome.Discovery"
       data =  data_for_discovery_request
     elsif params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOnRequest"
-      logger.debug `/usr/local/bin/zway kitchen_lights on`
+      logger.debug "Lights On:" + `/usr/local/bin/zway kitchen_lights on`
       data = data_for_turn_on_request
     elsif params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOffRequest"
-      logger.debug `/usr/local/bin/zway kitchen_lights off`
+      logger.debug "Lights Off:" +`/usr/local/bin/zway kitchen_lights off`
       data = data_for_turn_off_request
     end
     
