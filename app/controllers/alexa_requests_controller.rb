@@ -12,7 +12,7 @@ class AlexaRequestsController < ApplicationController
     
     response_message_id = (0...50).map { ('a'..'z').to_a[rand(26)] }.join
     
-    I, [2016-05-20T15:49:08.304800 #3195]  INFO -- :   Parameters: {"header"=>{"namespace"=>"Alexa.ConnectedHome.Control", "name"=>"TurnOnRequest", "payloadVersion"=>"2", "messageId"=>"965a3eed-b78b-40e3-b50e-3c5de6db0e42"}, "payload"=>{"accessToken"=>"hPjjianfrBwXA8EkafAP6Hd", "appliance"=>{"applianceId"=>"kitchenLightsID1234", "additionalApplianceDetails"=>{}}}, "alexa_request"=>{"header"=>{"namespace"=>"Alexa.ConnectedHome.Control", "name"=>"TurnOnRequest", "payloadVersion"=>"2", "messageId"=>"965a3eed-b78b-40e3-b50e-3c5de6db0e42"}, "payload"=>{"accessToken"=>"hPjjianfrBwXA8EkafAP6Hd", "appliance"=>{"applianceId"=>"kitchenLightsID1234", "additionalApplianceDetails"=>{}}}}}
+    #I, [2016-05-20T15:49:08.304800 #3195]  INFO -- :   Parameters: {"header"=>{"namespace"=>"Alexa.ConnectedHome.Control", "name"=>"TurnOnRequest", "payloadVersion"=>"2", "messageId"=>"965a3eed-b78b-40e3-b50e-3c5de6db0e42"}, "payload"=>{"accessToken"=>"hPjjianfrBwXA8EkafAP6Hd", "appliance"=>{"applianceId"=>"kitchenLightsID1234", "additionalApplianceDetails"=>{}}}, "alexa_request"=>{"header"=>{"namespace"=>"Alexa.ConnectedHome.Control", "name"=>"TurnOnRequest", "payloadVersion"=>"2", "messageId"=>"965a3eed-b78b-40e3-b50e-3c5de6db0e42"}, "payload"=>{"accessToken"=>"hPjjianfrBwXA8EkafAP6Hd", "appliance"=>{"applianceId"=>"kitchenLightsID1234", "additionalApplianceDetails"=>{}}}}}
     
     
     if params["header"]["namespace"] == "Alexa.ConnectedHome.Discovery"
