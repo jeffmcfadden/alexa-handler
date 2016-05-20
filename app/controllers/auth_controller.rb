@@ -10,7 +10,7 @@ class AuthController < ApplicationController
     data = {
       "access_token": "#{ENV['AUTHORIZATION_TOKEN']}",
       "token_type":"Bearer",
-      "expires_in":31533600,
+      "expires_in":310533600,
       "refresh_token": "#{ENV['REFRESH_TOKEN']}"
     }
     
