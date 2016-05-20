@@ -24,13 +24,13 @@ class AlexaRequestsController < ApplicationController
     elsif params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOnRequest"
       logger.debug "TURN ON REQUEST"
       
-      stdout, stdeerr, status = Open3.capture3("/home/pi/turn_on_kitchen_lights")
+      stdout, stdeerr, status = Open3.capture3("/usr/local/bin/zway kitchen_lights on")
       logger.debug "Output: " + stdout
       logger.debug "Error: "  + stdeerr
       data = data_for_turn_on_request
     elsif params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOffRequest"
       logger.debug "TURN OFF REQUEST"
-      stdout, stdeerr, status = Open3.capture3("/home/pi/turn_off_kitchen_lights")
+      stdout, stdeerr, status = Open3.capture3("/usr/local/bin/zway kitchen_lights off")
       logger.debug "Output: " + stdout
       logger.debug "Error: "  + stdeerr
       data = data_for_turn_off_request
