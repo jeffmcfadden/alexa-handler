@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get '/request' => 'alexa_requests#alexa_request', as: :alexa_request_get
+  post '/request' => 'alexa_requests#alexa_request', as: :alexa_request
+
   get  '/access_token' => 'auth#access_token', as: :get_access_token
   post '/access_token' => 'auth#access_token', as: :post_access_token
 

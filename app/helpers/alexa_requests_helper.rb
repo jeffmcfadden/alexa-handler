@@ -1,0 +1,2 @@
+module AlexaRequestsHelper
+end
