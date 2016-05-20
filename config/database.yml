@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: alexa-handler_production
-  username: alexa-handler
+  username: rails
   password: <%= ENV['ALEXA-HANDLER_DATABASE_PASSWORD'] %>
