@@ -15,7 +15,7 @@ class AuthController < ApplicationController
     }
     
     respond_to do |format|
-      format.html
+      format.html { render :json => data, layout: false }
       format.json { render :json => data }
     end
   end
