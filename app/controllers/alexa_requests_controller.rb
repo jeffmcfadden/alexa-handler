@@ -1,3 +1,5 @@
+require 'open3'
+
 class AlexaRequestsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token, only: [:alexa_request]
@@ -17,11 +19,15 @@ class AlexaRequestsController < ApplicationController
     
     if params["header"]["namespace"] == "Alexa.ConnectedHome.Discovery"
       data =  data_for_discovery_request
-    elsif params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOnRequest"
-      logger.debug "Lights On:" + `/usr/local/bin/zway kitchen_lights on`
+    elsif true || params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOnRequest"
+      stdout, stdeerr, status = Open3.capture3("/usr/local/bin/zway kitchen_lights on")
+      puts "Output: " + stdout
+      puts "Error: "  + stdeerr
       data = data_for_turn_on_request
     elsif params["header"]["namespace"] == "Alexa.ConnectedHome.Control" && params["header"]["name"] == "TurnOffRequest"
-      logger.debug "Lights Off:" +`/usr/local/bin/zway kitchen_lights off`
+      stdout, stdeerr, status = Open3.capture3("/usr/local/bin/zway kitchen_lights off")
+      puts "Output: " + stdout
+      puts "Error: "  + stdeerr
       data = data_for_turn_off_request
     end
     
